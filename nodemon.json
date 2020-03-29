@@ -1,0 +1,19 @@
+{
+  "ignore": [
+    "**/*.test.ts",
+    "**/*.spec.ts",
+    "node_modules",
+    ".git*"
+  ],
+  "verbose": true,
+  "watch": [
+    "src"
+  ],
+  "execMap": {
+    "ts": "node --inspect-brk=5858 --require ts-node/register"
+  },
+  "ext": "ts",
+  "env": {
+    "NODE_ENV": "development"
+  }
+}
