@@ -2,22 +2,34 @@
 
 Is an API of the Marglet messenger.
 
-## Steps to run locally in docker
+## Steps to run locally with Docker CLI
 
-1. Run **mongodb** container:
+1. Create the **marglet-network** network
 
 ```shell
-docker run -d -p 27017:27017 -v C:/mongodb/data mongo
+docker network create --name=marglet-api --attachable --driver=bridge marglet-network
 ```
 
-2. Build an **marglet-api** image:
+2. Run **mongo** container:
+
+```shell
+docker run --name=mongo --network=marglet-network -d -p 27017:27017 mongo
+```
+
+3. Build the **marglet-api** image:
 
 ```shell
 docker build -t marglet-api .
 ```
 
-3. Run a container:
+4. Run the **marglet-api** container:
 
 ```shell
-docker run -p 3030:3030 marglet-api
+docker run --name=marglet-api --network=marglet-network -d -p 3030:3030 marglet-api
+```
+
+## Run locally with Docker-compose
+
+```shell
+docker-compose up
 ```

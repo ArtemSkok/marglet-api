@@ -6,7 +6,8 @@ export const environment: IEnvironment = {
 
   mongodb: {
     dbName: 'marglet',
-    connectionURI: 'mongodb://localhost:27017',
+    // connectionURI: 'mongodb://localhost:27017',
+    connectionURI: 'mongodb://mongo:27017',
     collectionsNames: {
       users: 'users',
     }

@@ -1,8 +1,8 @@
 FROM node:latest
 
-WORKDIR /server
+WORKDIR /marglet-api
 
-COPY . /server
+COPY . /marglet-api
 RUN npm install
 
 EXPOSE 3030
