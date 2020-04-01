@@ -18,8 +18,7 @@
     "node_modules",
     ".vscode"
   ],
-  "include": [
-    "src/**/*"
+  "files": [
+    "src/main.ts"
   ],
-  "paths": {}
 }

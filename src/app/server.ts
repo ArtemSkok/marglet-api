@@ -14,7 +14,6 @@ export const createGraphQLServer = async () => {
   const c = await container;
 
   const usersService = c.get<IUsersService>(TYPE.UsersService);
-  debugger;
   const resolvers = mergeResolvers([
     usersResolver(usersService),
   ]);

@@ -31,5 +31,8 @@ docker run --name=marglet-api --network=marglet-network -d -p 3030:3030 marglet-
 ## Run locally with Docker-compose
 
 ```shell
-docker-compose up
+docker-compose rm
+docker-compose pull
+docker-compose build --no-cache
+docker-compose up --force-recreate
 ```

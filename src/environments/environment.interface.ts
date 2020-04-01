@@ -10,8 +10,4 @@ export interface IEnvironment {
     }
   }
 
-  auth: {
-    tokenSecret: string;
-    refreshTokenSecret: string;
-  }
 }

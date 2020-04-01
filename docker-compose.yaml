@@ -10,4 +10,4 @@ services:
     # image: marglet-api
     build: .
     ports:
-      - ${PORT:3030}:${PORT:3030}
+      - ${PORT:-3030}:${PORT:-3030}
