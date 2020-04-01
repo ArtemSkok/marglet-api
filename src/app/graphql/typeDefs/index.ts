@@ -16,5 +16,4 @@ const typeDefs: DocumentNode[] = [
   ...types
 ];
 
-debugger;
 export default mergeTypes(typeDefs);
