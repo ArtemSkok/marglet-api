@@ -5,7 +5,7 @@ import { queriesType } from './queries';
 import { subscriptionsType } from './subscriptions';
 
 export const schema: DocumentNode[] = [
-  // mutationsType,
+  mutationsType,
   queriesType,
   // subscriptionsType
 ];

@@ -3,12 +3,12 @@ import { gql } from 'apollo-server';
 export const userType = gql`
   type User {
     id: ID!
+    email: String
+    login: String
     firstName: String
     lastName: String
-    displayName: String
     birthDate: Date
-    email: String
-    photoUrl: String
+    # photoUrl: String
     isVerified: Boolean
     createdAt: Date
     updatedAt: Date

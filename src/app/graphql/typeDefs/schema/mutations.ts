@@ -1,14 +1,12 @@
 import { gql } from 'apollo-server';
 
 export const mutationsType = gql`
-    type Mutation {
-        # createChannel(input: ChannelCreateInput!): Channel
-        # deleteChannel(id: ID!): DeleteChannelResponse
-        # createMessage(input: MessageCreateInput!): Message
-        # deleteMessage(id: ID!): DeleteMessageResponse
-        # uploadImage(file: Upload!): String
-        # createUser(input: UserCreateInput!): User
-        # deleteUser(id: ID!): DeleteUserResponse
-        # signIn(email: String!, password: String!): AuthResponse
-    }
+  type Mutation {
+    updateUser(input: UpdateUserInput): Boolean
+    deleteUser: Boolean
+    signUp(input: SignUpInput): AuthResponse
+    logIn(input: LogInInput): AuthResponse
+    logOut: Boolean
+    refreshAccessToken(input: RefreshAccessTokenInput): AuthResponse
+  }
 `;

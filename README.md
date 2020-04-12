@@ -7,7 +7,7 @@ Is an API of the Marglet messenger.
 1. Create the **marglet-network** network
 
 ```shell
-docker network create --name=marglet-api --attachable --driver=bridge marglet-network
+docker network create --attachable --driver=bridge marglet-network
 ```
 
 2. Run **mongo** container:
@@ -34,5 +34,5 @@ docker run --name=marglet-api --network=marglet-network -d -p 3030:3030 marglet-
 docker-compose rm
 docker-compose pull
 docker-compose build --no-cache
-docker-compose up --force-recreate
+docker-compose up -d --force-recreate
 ```
