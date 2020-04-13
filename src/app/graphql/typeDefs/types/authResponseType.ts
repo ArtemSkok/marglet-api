@@ -1,6 +1,6 @@
 import { gql } from 'apollo-server';
 
-export const authResponseType = gql`
+export default gql`
   type AuthResponse {
     userId: String
     accessToken: String

@@ -1,6 +1,6 @@
 import { gql } from 'apollo-server';
 
-export const queriesType = gql`
+export default gql`
   type Query {
     user(id: String): User
   }

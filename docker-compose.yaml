@@ -5,9 +5,14 @@ services:
     image: mongo
     ports: 
       - 27017:27017
+    volumes: 
+      - mongodbdata:/data/db
 
   marglet-api:
     # image: marglet-api
     build: .
     ports:
       - ${PORT:-3030}:${PORT:-3030}
+
+volumes:
+  mongodbdata:

@@ -8,9 +8,8 @@ import { IAuthService } from '../../services/interfaces/IAuthService';
 
 export const authResolver = (authService: IAuthService) => ({
   Mutation: {
-    signUp: async (_, { input }: { input: ISignUpMutationArgs }) => {
-      return authService.signUp(input);
-    },
+    signUp: async (_, { input }: { input: ISignUpMutationArgs }) =>
+      authService.signUp(input),
 
     logIn: async (_, { input }: { input: ILogInMutationArgs }) =>
       authService.logIn(input.email, input.password),
@@ -18,7 +17,7 @@ export const authResolver = (authService: IAuthService) => ({
     logOut: async (_, _args: void, { user }: IAuthContext) =>
       authService.logOut(user.id),
 
-    refreshAccessToken: async (_, { input }: { input: IRefreshAccessTokenMutationArgs}) =>
+    refreshAccessToken: async (_, { input }: { input: IRefreshAccessTokenMutationArgs }) =>
       authService.refreshAccessToken(input.accessToken, input.refreshToken),
   }
 });

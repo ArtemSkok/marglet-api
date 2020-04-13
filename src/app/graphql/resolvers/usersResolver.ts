@@ -6,7 +6,7 @@ import { IUsersService } from '../../services/interfaces/IUsersService';
 
 export const usersResolver = (usersService: IUsersService) => ({
   Query: {
-    user: async (_, id: string) =>
+    user: async (_, { id }: { id: string }) =>
       usersService.get(id)
   },
   Mutation: {

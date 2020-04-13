@@ -39,8 +39,11 @@ export class UsersService implements IUsersService {
 
   @exception()
   async delete(id: string) {
-    await this.userRepository.deleteOne({ id });
-    await this.sessionsRepository.deleteOne({ userId: id });
+    await Promise.all([
+      this.userRepository.deleteOne({ id }),
+      this.sessionsRepository.deleteOne({ userId: id })
+    ]);
+
     return true;
   }
 }

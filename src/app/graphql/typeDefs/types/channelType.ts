@@ -1,6 +1,6 @@
 import { gql } from 'apollo-server';
 
-export const channelType = gql`
+export default gql`
   type Channel {
     id: ID!
     name: String

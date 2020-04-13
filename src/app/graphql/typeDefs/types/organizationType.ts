@@ -1,6 +1,6 @@
 import { gql } from 'apollo-server';
 
-export const organizationType = gql`
+export default gql`
   type Organization {
     id: ID!
     domain: String

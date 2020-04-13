@@ -1,6 +1,6 @@
 import { gql } from 'apollo-server';
 
-export const messageType = gql`
+export default gql`
   type Message {
     id: ID!
     text: String

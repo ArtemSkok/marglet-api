@@ -1,6 +1,6 @@
 import { gql } from 'apollo-server';
 
-export const mutationsType = gql`
+export default gql`
   type Mutation {
     updateUser(input: UpdateUserInput): Boolean
     deleteUser: Boolean

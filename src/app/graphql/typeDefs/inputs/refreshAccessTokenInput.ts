@@ -1,6 +1,6 @@
 import { gql } from 'apollo-server';
 
-export const refreshAccessTokenInput = gql`
+export default gql`
   input RefreshAccessTokenInput {
     accessToken: String
     refreshToken: String

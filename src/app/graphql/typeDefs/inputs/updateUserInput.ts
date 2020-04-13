@@ -1,6 +1,6 @@
 import { gql } from 'apollo-server';
 
-export const updateUserInput = gql`
+export default gql`
   input UpdateUserInput {
     email: String
     password: String
