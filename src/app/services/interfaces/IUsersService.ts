@@ -1,10 +1,8 @@
-import { AuthenticationError } from 'apollo-server';
-import { CreateUserMutationArgs, AuthResponse } from '../../models';
+import { IUpdateUserMutationArgs } from '../../models';
 import { User } from '../../entities/User';
 
 export interface IUsersService {
-    get(id: string): Promise<User>;
-    // create(input: CreateUserMutationArgs): Promise<AuthResponse | AuthenticationError>;
-    // delete(id: string): Promise<{ ok: boolean; error?: string; }>;
-    // signIn(email: string, password: string): Promise<AuthResponse | AuthenticationError>;
+  get(id: string): Promise<User>;
+  update(id: string, input: IUpdateUserMutationArgs): Promise<boolean>;
+  delete(id: string): Promise<boolean>;
 }

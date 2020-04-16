@@ -1,4 +1,16 @@
 {
   "extends": "tslint:recommended",
-  "exclude": "./"
+  "linterOptions": {
+    "exclude": [
+      "node_modules"
+    ]
+  },
+  "rules": {
+    "no-implicit-dependencies": true,
+    "no-console": false,
+    "semicolon": true,
+    "quotemark": {
+      "options": "single"
+    }
+  }
 }

@@ -1,8 +1,19 @@
-import { Context } from '../../models';
+import {
+  IAuthContext,
+  IUpdateUserMutationArgs
+} from '../../models';
 import { IUsersService } from '../../services/interfaces/IUsersService';
 
 export const usersResolver = (usersService: IUsersService) => ({
-    Query: {
-        user: async (_, _args, { user }: Context) => await usersService.get(user.id)
-    },
+  Query: {
+    user: async (_, { id }: { id: string }) =>
+      usersService.get(id)
+  },
+  Mutation: {
+    updateUser: async (_, { input }: { input: IUpdateUserMutationArgs }, { user }: IAuthContext) =>
+      usersService.update(user.id, input),
+
+    deleteUser: async (_, _args, { user }: IAuthContext) =>
+      usersService.delete(user.id)
+  }
 });

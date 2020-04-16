@@ -1,7 +1,7 @@
-import { gql } from 'apollo-server';
+// import { gql } from 'apollo-server';
 
-export const subscriptionsType = gql`
-    type Subscription {
-        # messageAdded(channelId: ID!): Message
-    }
-`;
+// export default gql`
+//   type Subscription {
+//     # messageAdded(channelId: ID!): Message
+//   }
+// `;

@@ -1,15 +1,42 @@
+import { v4 as uuidv4 } from 'uuid';
+
+interface IUserConstructorParams {
+  email: string;
+  hashedPassword: string;
+  firstName: string;
+  lastName: string;
+  login: string;
+  birthDate: Date;
+}
+
 export class User {
-  constructor(
-      public id: string,
-      public email: string,
-      public firstName: string,
-      public lastName: string,
-      public displayName: string,
-      public birthDate: string,
-      public photoUrl?: string,
-      public hashedPassword?: string,
-      public createdAt?: Date,
-      public updatedAt?: Date,
-      public isVerified?: boolean,
-  ) { }
+  id: string;
+  email: string;
+  login: string;
+  hashedPassword: string;
+  firstName: string;
+  lastName: string;
+  birthDate: Date;
+  isVerified: boolean;
+  createdAt: Date;
+  updatedAt: Date;
+  //  photoUrl?: string,
+
+  constructor({
+    email,
+    hashedPassword,
+    firstName,
+    lastName,
+    login,
+    birthDate,
+  }: IUserConstructorParams) {
+    this.id = uuidv4();
+    this.hashedPassword = hashedPassword; // TODO: Move hashing logic here
+    this.email = email;
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.login = login;
+    this.birthDate = birthDate;
+  }
+
 }
