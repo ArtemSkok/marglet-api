@@ -4,7 +4,7 @@ import { AuthenticationError } from 'apollo-server';
 import { TYPES } from '../ioc/types';
 import { exception } from '../decorators/exceptionDecorator';
 import { IAuthService } from './interfaces/IAuthService';
-import { ISignUpMutationArgs, IAccessTokenData } from '../models';
+import { ISignUpMutationArgs } from '../models';
 import { User, Session } from '../entities';
 import { HashingUtil, JWTUtil } from '../utils';
 import { UsersRepository, SessionsRepository } from '../repositories';
@@ -84,8 +84,9 @@ export class AuthService implements IAuthService {
 
   @exception()
   async logOut(userId: string) {
-    await this.sessionsRepository.deleteOne({ userId });
-    return true;
+    const { result } = await this.sessionsRepository.deleteOne({ userId });
+
+    return Boolean(result.ok);
   }
 
   @exception()

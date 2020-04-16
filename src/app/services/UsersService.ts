@@ -28,22 +28,25 @@ export class UsersService implements IUsersService {
       fieldsToUpdate.hashedPassword = await HashingUtil.hash(input.password);
     }
 
-    const res = await this.userRepository.updateOne(
+    const { result } = await this.userRepository.updateOne(
       { id },
       {
         $set: fieldsToUpdate
       });
 
-    return res.result.ok === 1;
+    return Boolean(result.ok);
   }
 
   @exception()
   async delete(id: string) {
-    await Promise.all([
+    const [
+      { result: deleteUserRes },
+      { result: deleteSessionRes }
+    ] = await Promise.all([
       this.userRepository.deleteOne({ id }),
       this.sessionsRepository.deleteOne({ userId: id })
     ]);
 
-    return true;
+    return Boolean(deleteUserRes.ok) && Boolean(deleteSessionRes.ok);
   }
 }

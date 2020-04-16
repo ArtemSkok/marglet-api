@@ -1,9 +1,11 @@
 export class HTTPHeadersUtil {
   static getBearerToken(authHeader: string): string | null {
-    try {
-      return authHeader.split('Bearer ')[1];
-    } catch (error) {
-      return null;
+    if (!authHeader) { return null; }
+
+    const a = authHeader.split(' ');
+
+    if (a[0] === 'Bearer') {
+      return a[1] || null;
     }
   }
 
