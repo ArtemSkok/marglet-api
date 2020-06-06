@@ -15,7 +15,7 @@
     "@google-cloud/logging": "^7.3.0",
     "@google-cloud/storage": "^4.5.0",
     "@types/mongodb": "^3.5.5",
-    "apollo-server": "^2.11.0",
+    "apollo-server": "^2.14.2",
     "bcrypt": "^4.0.1",
     "dotenv": "^8.2.0",
     "graphql": "^14.6.0",
